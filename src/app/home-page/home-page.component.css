@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  /* justify-content: center;
+  align-items: center; */
+  height: 100vh;
+  background: #e8e3df;
+}
+
+.nav {
+  /* height: 50px; */
+  background: black;
+}
+
+.wrapper {
+  background-image: radial-gradient(circle, #fdfcfc 0%, #e8e3df 0%);
+}
+
+table {
+  margin-top: 20px;
+}
+
+tr {
+}
+
+td {
+  border: 1px solid #d7ccc6;
+  height: 4.4vw;
+  width: 4.4vw;
+}
+table {
+  border-collapse: separate !important;
+  text-indent: initial;
+  border-spacing: 2px !important;
+}
+/* 
+.my-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+.my-grid > div {
+  width: 5vw;
+  height: 4.4vw;
+  border: 1px solid #d7ccc6;
+}
+
+.my-grid img {
+  object-fit: cover;
+
+  height: 100%;
+  width: 100%;
+} */
+
+img {
+  object-fit: contain;
+
+  height: 100%;
+  width: 100%;
+}
+
+.img-block {
+  object-fit: cover !important;
+
+  height: 100%;
+  width: 100%;
+}
+
+.extra-style {
+  height: 100%;
+  width: 100%;
+  /* object-fit: cover; */
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  cursor: pointer;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100% !important;
+  padding: 12px 20px !important;
+  margin: 8px 0 !important;
+  display: inline-block !important;
+  border: 1px solid #ccc !important;
+  box-sizing: border-box !important;
+  border-radius: 5px !important;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.button-wrapper button {
+  padding: 10px 20px;
+  display: flex;
+  width: 50%;
+  font-weight: 600;
+  align-items: center;
+  border-radius: 4px;
+  background-color: #0085ff;
+  color: #fff;
+  font-size: 14px;
+  border: 2px solid #0085ff;
+  justify-content: center;
+}
+@media screen and (max-width: 991px) {
+  .button-wrapper button {
+    font-size: 14px;
+  }
+}
+.button-wrapper button:hover {
+  background-color: #000;
+  border: 2px solid #000;
+}
+.button-wrapper button svg {
+  margin-left: 10px;
+}
+
+body {
+  background-color: #ebeff2;
+}
+.card {
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 5px 6px 6px 2px #e9ecef;
+}
+.allergy {
+  position: relative;
+  bottom: 8px;
+  color: grey;
+}
+.head {
+  color: #97989a;
+  font-size: 12px;
+}
+.bottom {
+  color: grey;
+  font-size: 14px;
+}
+.gridContainer {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+  grid-auto-rows: 60px;
+  grid-auto-flow: dense;
+  grid-gap: 0.3rem;
+  margin-bottom: 100px;
+  color: #898888;
+  padding-top: 5px;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 480px) {
+  .gridContainer {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16px, 1fr));
+    grid-auto-rows: 16px;
+    grid-auto-flow: dense;
+    grid-gap: 0.3rem;
+    margin-bottom: 100px;
+  }
+}
+
+/* Media Query for low resolution Tablets, Ipads */
+@media (min-width: 481px) and (max-width: 767px) {
+  .gridContainer {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    grid-auto-rows: 60px;
+    grid-auto-flow: dense;
+    grid-gap: 0.3rem;
+    margin-bottom: 100px;
+  }
+}
+
+/* Media Query for Tablets Ipads portrait mode */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .gridContainer {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(33px, 1fr));
+    grid-auto-rows: 33px;
+    grid-auto-flow: dense;
+    grid-gap: 0.3rem;
+    margin-bottom: 100px;
+  }
+}
+
+/* Media Query for Laptops and Desktops */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .gridContainer {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+    grid-auto-rows: 40px;
+    grid-auto-flow: dense;
+    grid-gap: 0.3rem;
+    margin-bottom: 100px;
+  }
+}
+
+/* Media Query for Large screens */
+@media (min-width: 1440px) {
+  .gridContainer {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
+    grid-auto-rows: 65px;
+    grid-auto-flow: dense;
+    grid-gap: 0.3rem;
+    margin-bottom: 100px;
+  }
+}
+
+@media (min-width: 1441px) {
+  .gridContainer {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    grid-auto-rows: 9-px;
+    grid-auto-flow: dense;
+    grid-gap: 0.3rem;
+    margin-bottom: 100px;
+  }
+}
+
+ul {
+  list-style: none;
+}

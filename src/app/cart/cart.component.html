@@ -1,0 +1,121 @@
+<div id="__next">
+    <div class="Home_container__bCOhY">
+        <div class="cart-wrapper container">
+            <form #form="ngForm" (ngSubmit)="checkout(form)">
+                <div class="row">
+
+                    <div class="col-8 cart-summary">
+
+                        <div class="cart-box">
+                            <div class="img-wrapper mb-3">
+                                <span style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%">
+                    <span style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%">
+                      <img style="display:block;max-width:100%;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0" alt="" aria-hidden="true" src="data:image/svg+xml,%3csvg%20
+                                              xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2730%27%20height=%2730%27/%3e" />
+                    </span>
+                                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" decoding="async" data-nimg="intrinsic" style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"
+                                />
+                                <noscript>
+                      <img srcSet="/assets/media/back.80f9a51d.svg 1x, /assets/media/back.80f9a51d.svg 2x" src="/assets/media/back.80f9a51d.svg" decoding="async" data-nimg="intrinsic" style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%" loading="lazy" />
+                    </noscript>
+                                </span>
+                            </div>
+                            <h2>ADS DETAILS</h2>
+                            <div class="row">
+                                <div [ngClass]="!form.valid && errors.name ? 'red' : ''" id="name" class="input-details col-lg-6">
+                                    <label>Name</label>
+                                    <input (ngModelChange)="checkForm(form)" type="text" required name="name" [ngModel]="user?.name" />
+                                    <span *ngIf="!form.valid && errors.name" style="color: red;">Name is required.</span>
+                                </div>
+                                <div [ngClass]="!form.valid && errors.email ? 'red' : ''" id="email" class="input-details col-lg-6">
+                                    <label>Email</label>
+                                    <input (ngModelChange)="checkForm(form)" type="text" required name="email"  [disabled]="user?.email" [ngModel]="user?.email" />
+                                    <span *ngIf="!form.valid && errors.email" style="color: red;">Email is required.</span>
+                                </div>
+                                <div [ngClass]="!form.valid && errors.company_name ? 'red' : ''" id="company_name"  class="input-details col-lg-6">
+                                    <label>Company Name</label>
+                                    <input (ngModelChange)="checkForm(form)" type="text" required name="company_name" ngModel/>
+                                    <span *ngIf="!form.valid && errors.company_name" style="color: red;">Company Name is required.</span>
+                                </div>
+                                <div [ngClass]="!form.valid && errors.tagline ? 'red' : ''" id="tagline"  class="input-details col-lg-6">
+                                    <label>Ads Tagline</label>
+                                    <input (ngModelChange)="checkForm(form)" type="text" required name="tagline" ngModel />
+                                    <span *ngIf="!form.valid && errors.tagline" style="color: red;">Tagline is required.</span>
+                                </div>
+                           
+                              
+                                <div  [ngClass]="!form.valid && errors.city_name ? 'red' : ''" id="city_name" class="input-details col-lg-6">
+                                    <label>City</label>
+                                    <input (ngModelChange)="checkForm(form)" type="text" required name="city_name" ngModel />
+                                    <span *ngIf="!form.valid && errors.city_name" style="color: red;">City is required.</span>
+                                </div>
+                                <div  [ngClass]="!form.valid && errors.pincode ? 'red' : ''" id="pincode" class="input-details col-lg-6">
+                                    <label>PIN code</label>
+                                    <input (ngModelChange)="checkForm(form)" type="text" required name="pincode" ngModel/>
+                                    <span *ngIf="!form.valid && errors.pincode" style="color: red;">Pincode is required.</span>
+                                </div>
+                                <div [ngClass]="!form.valid && errors.state ? 'red' : ''" id="state"  class="input-details col-lg-6">
+                                    <label>State</label>
+                                    <input (ngModelChange)="checkForm(form)" type="text" required name="state" ngModel />
+                                    <span *ngIf="!form.valid && errors.state" style="color: red;">State is required.</span>
+                                </div>
+                                <div [ngClass]="!form.valid && errors.country ? 'red' : ''" id="country"  class="input-details col-lg-6">
+                                    <label>Country</label>
+                                    <input (ngModelChange)="checkForm(form)" type="text" required name="country" ngModel/>
+                                    <span *ngIf="!form.valid && errors.country" style="color: red;">Country is required.</span>
+                                </div>
+                                <div [ngClass]="!form.valid && errors.phone ? 'red' : ''" id="phone"  class="input-details col-lg-6">
+                                    <label>Phone</label>
+                                    <input (ngModelChange)="checkForm(form)" type="text" required name="phone"  [ngModel]="user?.phone" />
+                                    <span *ngIf="!form.valid && errors.phone" style="color: red;">Phone is required.</span>
+                                </div>
+                                <div  [ngClass]="!form.valid && errors.addressLine1 ? 'red' : ''" id="addressLine1" class="input-details col-lg-12">
+                                    <label>Address line 1</label>
+                                    <textarea  (ngModelChange)="checkForm(form)"   required rows="4" type="text" name="addressLine1" ngModel></textarea>
+                                    <span *ngIf="!form.valid && errors.addressLine1" style="color: red;">Address is required.</span>
+                                </div>
+                                <!-- <div class="input-details col-lg-12">
+                                    <label>Description</label>
+                                    <textarea [maxlength]="400" required rows="4" (ngModelChange)="onDescChange($event)" type="text" name="description" [ngModel]="description"></textarea>
+                                </div> -->
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="col-4 cart-summary">
+                        <div class="cart-box">
+                            <h2>ADVERTISEMENT SUMMARY</h2>
+                            <div class="details">
+                                <label>Purchased blocks</label>
+                                <p>{{ blocks}} Unit</p>
+                            </div>
+                            <div class="details">
+                                <label>Price per block</label>
+                                <p>500/-</p>
+                            </div>
+                            <div class="details">
+                                <label>Service fees</label>
+                                <p>80/-</p>
+                            </div>
+                            <hr />
+                            <div class="details">
+                                <label>Total purchased</label>
+                                <p>{{blocks * 500 + 80}}/-</p>
+                            </div>
+                            <div class="button-wrapper text-center">
+                                <!-- <button>Preview</button> -->
+                                <button [disabled]="loading" class="ms-2"> <div *ngIf="loading"  class="spinner-border d-flex justify-content-center align-items-center" role="status">
+                                    <span class="sr-only">Loading...</span>
+                                  </div> &nbsp;&nbsp; Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+    <router-outlet></router-outlet>
+</div>

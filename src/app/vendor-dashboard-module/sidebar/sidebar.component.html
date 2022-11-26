@@ -1,0 +1,79 @@
+
+<main class="d-flex flex-nowrap menu">
+<div class="sidebar-custom d-flex flex-column flex-shrink-0 p-3 " style="width: 280px; background-color: #f3f2f0;;">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+      <span class="fs-4 text-black">Vendor Dashboard</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+
+      <li>
+        <a routerLink="/vendor-profile" href="#" [ngClass]="!activeUrl ? 'active': ''" class="nav-link  text-black">
+          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
+          Dashboard
+        </a>
+      </li>
+      <li  *ngIf="adsData ">
+        <a  routerLink="/business-profile" [ngClass]="activeUrl=== '/business-profile' ? 'active': ''"  href="#" class="nav-link text-black">
+          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"/></svg>
+          Business Profile
+        </a>
+      </li>
+      <li class="mb-1">
+  
+        <a  *ngIf="user.status === 'active'" (click)="addClass()"  routerLink="/personal-profile"  [ngClass]="(activeUrl=== '/personal-profile' || activeUrl === '/update-password') ? 'active': ''" href="#" class="collapsed nav-link text-black">
+          {{ addClassBool? '▼': '>' }} <svg  class="bi pe-none me-2" width="5" height="16"><use xlink:href="#grid"/></svg>
+          Personal Profile
+        </a>
+        <div [ngClass]="addClassBool ? 'collapse-show': 'collapse'" id="orders-collapse">
+          <ul class=" ">
+            <a   class="nav-link"  routerLink="/update-password"><li><a [ngClass]="activeUrl!== '/update-password' ? 'color-black': ''" href="#">Update Password</a></li></a>
+			
+          </ul>
+        </div>
+      </li>
+      <li>
+        
+      
+  
+      </li>
+      <li  *ngIf="adsData " >
+        <a  routerLink="/order-history" [ngClass]="activeUrl=== '/order-history' ? 'active': ''"  href="#" class="nav-link text-black">
+          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+          Order History
+        </a>
+      </li>
+      <li  *ngIf="adsData" >
+        <a  routerLink="/ads-statistics" [ngClass]="activeUrl=== '/ads-statistics' ? 'active': ''" href="#" class="nav-link text-black">
+          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+          Ads Statistics
+        </a>
+      </li>
+      <li *ngIf="adsData ">
+        <a  routerLink="/sell-blocks" [ngClass]="activeUrl=== '/sell-blocks' ? 'active': ''" href="#" class="nav-link text-black">
+          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+          Sell Blocks
+        </a>
+      </li>
+      <li>
+        <a routerLink="/raise-concern" [ngClass]="activeUrl=== '/raise-concern' ? 'active': ''" href="#" class="nav-link text-black">
+          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+          Raise A Concern
+        </a>
+      </li>
+      <li>
+        <a (click)="logout()"  href="#" class="nav-link text-black">
+          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
+         Logout
+        </a>
+      </li>
+    </ul>
+  
+
+  </div>
+  <div class="container">
+    <ng-content></ng-content>
+  </div>
+
+  </main>

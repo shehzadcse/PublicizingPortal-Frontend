@@ -1,0 +1,68 @@
+
+ <h2>Personal Profile</h2>
+
+
+
+
+ <div class="">
+     <form #form="ngForm" (ngSubmit)="updatePersonalProfile(form)" >
+         <div class="row justify-content-center">
+            
+     
+             <div class="col-8 cart-summary">
+                
+                   
+                   
+                  
+                 <div >
+                  <br/>
+                     <div class="row">
+                        <div class="row justify-content-center ">
+                            <label style="font-weight: bold;">PROFILE PICTURE</label>
+                        <img (click)="file.click()" style="max-height: 400px; width: auto;" [src]="loading? '/assets/media/Loading_icon.gif': (user?.profile_picture || '/assets/media/profile.png')" class="card-img-top" alt="...">
+           
+                        <div style="padding-top: 30px;" class=" d-flex justify-content-center">
+                        <input #file style="display: none;" type="file" accept="image/*"  >
+                            <a  style="    position: relative;
+                            bottom: 82px;" (click)="file.click()" class="btn btn-primary">{{adsData?.imageUrl ?"Change": "Upload"}} Image</a>
+                         
+                      </div>
+                   </div>
+                         <div class="input-details col-lg-6 col-sm-12">
+                             <label>Name</label>
+                             <input type="text" required name="name" [ngModel]="user?.name"/>
+                         </div>
+                         <div class="input-details col-lg-6 col-sm-12">
+                             <label>Email</label>
+                             <input type="text" disabled required name="email" [ngModel]="user?.email" />
+                         </div>
+                         <div class="input-details col-lg-6 col-sm-12">
+                            <label>Alternate Email</label>
+                            <input type="text"  name="alt_email" [ngModel]="user?.alt_email" />
+                        </div>
+                         <div class="input-details col-lg-6 col-sm-12">
+                            <label>Phone</label>
+                            <input type="text" required name="phone" [ngModel]="user?.phone" />
+                        </div>
+                   
+                       
+                         
+                     </div>
+                 </div>
+ 
+             </div>
+          
+ 
+        
+         </div>
+         <div  class="row justify-content-center">
+ 
+             <button [disabled]="!form.valid" style="width: 200px;" class="btn btn-primary">Update</button>
+         </div>
+     </form>
+ </div><br/>
+ <br/>
+
+
+
+

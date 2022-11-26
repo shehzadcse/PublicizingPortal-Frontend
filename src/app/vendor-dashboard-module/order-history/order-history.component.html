@@ -1,0 +1,71 @@
+<h2 class=" sidebar-custom">Order History</h2>
+
+<section  class="h-100 gradient-custom example-print">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div  id="sectionToPrint" class="col-lg-12 col-xl-12">
+          <div class="card" style="border-radius: 10px;">
+            <div class="card-header px-4 py-5">
+              <h5 class="text-muted mb-0">Thanks for your Order, <span style="color: #a8729a;">{{user?.name}}</span>!</h5>
+            </div>
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <p class="lead fw-normal mb-0" style="color: #a8729a;">Receipt</p>
+                <p class="small text-muted mb-0"> Order Number: {{adsData?.id}}</p>
+              </div>
+          
+              <div class="card shadow-0 border mb-4">
+                <div class="card-body">
+                  <div class="row">
+                    <!-- <div class="col-md-2">
+                      <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/1.webp"
+                        class="img-fluid" alt="Phone">
+                    </div> -->
+                    <div class="col-md-4 text-center d-flex justify-content-center align-items-center">
+                        <p class="text-muted mb-0 small"> Order Of  {{ adsData?.hblocks * adsData?.wblocks }} Blocks</p>
+                      </div>
+                    <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                      <p class="text-muted mb-0 small">Height: {{adsData?.hblocks}}</p>
+                    </div>
+                    <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                      <p class="text-muted mb-0 small">Width: {{adsData?.wblocks}}</p>
+                    </div>
+                    <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                      <p class="text-muted mb-0 small">Qty: {{ adsData?.hblocks * adsData?.wblocks }}</p>
+                    </div>
+                    <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                      <p class="text-muted mb-0 small">Rs. {{ adsData?.hblocks * adsData?.wblocks * 500 }}</p>
+                    </div>
+                  </div>
+              
+                </div>
+              </div>
+  
+              <div class="d-flex justify-content-between pt-2">
+                <p class="fw-bold mb-0">Order Details</p>
+                <p class="text-muted mb-0"><span class="fw-bold me-4">Total</span> Rs.  {{ adsData?.hblocks * adsData?.wblocks * 500 }}</p>
+              </div>
+  
+         
+  
+              <div class="d-flex justify-content-between">
+                <p class="text-muted mb-0">Invoice Date : {{adsData?.created_at | date:'YYYY-MM-dd'}}</p>
+                <p class="text-muted mb-0"><span class="fw-bold me-4">Service Fee</span> Rs 80</p>
+              </div>
+  
+           
+            </div>
+            <div class="card-footer border-0 px-4 py-5"
+              style="color:black; background-color: #f3f2f0; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
+              <h5 class="d-flex align-items-center justify-content-end text-black text-uppercase mb-0">Total
+                paid: <span class="h2 mb-0 ms-2">Rs {{adsData?.hblocks * adsData?.wblocks * 500  + 80}}</span></h5>
+            </div>
+          </div>
+        </div>
+        <button  style="width: 100px" (click)="onPrint('sectionToPrint')" class=" sidebar-custom btn btn-primary">Print</button>
+      </div>
+    </div>
+
+  </section>
+
+

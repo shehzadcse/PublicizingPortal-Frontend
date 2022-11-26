@@ -1,0 +1,41 @@
+<br/>
+
+<div class="container2">
+  <div class="form-area">
+      <form  #form="ngForm" (ngSubmit)="register(form)">
+          <div class="title">
+              <span>Register</span>
+          </div>
+          <input required name="name" ngModel type="text" placeholder="Name"><br>
+          <input required name="email" ngModel type="text" placeholder="Email"><br>
+          <input required name="phone" ngModel type="text" placeholder="Phone"><br>
+          <input required name="password" #pass ngModel (ngModelChange)="checkPass($event,pass2.value)" type="password" placeholder="Password">
+          <input required name="confPassword" #pass2 (ngModelChange)="checkPass($event,pass.value)" ngModel type="password" placeholder="Confirm Password">
+         <span style="color: red;" *ngIf="!passMatch">*Passwords Do Not Match <br/></span>
+          
+            <input name="terms" ngModel required type="checkbox"/> I Accept <a routerLink="/terms-and-conditions"><span (click)="showModal()" style="color: blue;cursor:pointer" > Terms And Conditions </span></a>
+          
+             <!-- <div class="row">
+              <div class="col-md-3">
+                <a  class="btn btn-outline-dark" (click)="loginWithGoogle()" role="button" style="text-transform:none">
+                  <img width="40px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+                 
+                </a>
+              </div>
+              <div class="col-md-3">
+                <a  class="btn btn-outline-dark" (click)="loginWithFB()" role="button" style="text-transform:none">
+                  <img width="40px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://en.wikipedia.org/wiki/File:Facebook_f_logo_(2021).svg" />
+                 
+                </a>
+              </div>
+            </div> -->
+          <button type="submit"  [disabled]="!passMatch || !form.valid" class="register">Register</button>
+          <button type="button" (click)="gotoLogin()" class="login">Login</button><br>
+
+      </form>
+   
+  </div>
+
+</div>
+
+

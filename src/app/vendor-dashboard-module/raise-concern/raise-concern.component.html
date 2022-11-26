@@ -1,0 +1,183 @@
+
+<h2>Raise Concern</h2>
+<br/>
+<div class="row justify-content-end">
+    <button style="width: 150px;margin-right: 20px;" (click)="openConcernModal()" class="btn btn-primary">Create Concern</button>
+</div>
+<br/>
+<nz-table #basicTable [nzData]="dataSource">
+    <thead>
+      <tr>
+        <th>Concern</th>
+        <th>Raised On</th>
+        <th>Priority</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of basicTable.data">
+        <td>{{data.concern}}</td>
+        <td>{{data.raisedOn}}</td>
+        <td>{{data.priority}}</td>
+        <td>{{data.status}}</td>
+        <td (click)="showModal()"> <button nz-button nzType="primary" nzShape="circle"><span nz-icon nzType="edit"></span></button></td>
+     
+      </tr>
+    </tbody>
+  </nz-table>
+
+
+
+  <nz-modal [nzWidth]="1000" [(nzVisible)]="isVisible" nzTitle="Concern" (nzOnCancel)="handleCancel()" >
+    <ng-container *nzModalContent>
+        <div class="col-md-12 col-sm-12">
+            <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+            <div class="container">
+            <div class="row clearfix">
+                <div class="col-lg-12">
+                    <div class="card ">
+                   
+                        <div class="chat">
+                            <div class="row">
+                                <div class ="col-md-6 col-sm-12">
+                            <div class="chat-header clearfix">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                       
+                                        <div class="chat-about">
+                                            <h6 class="m-b-0">Businesses In India</h6>
+                                            <small>Chat History:</small>
+                                        </div>
+                                    </div>
+                                 
+                                </div>
+                            </div>
+                            <div style="max-height: 300px; overflow-x: visible; overflow-y: scroll;" class="chat-history">
+                                <ul  class="m-b-0">
+
+                                    <div class="col-md-6">
+                                        <div class="message-data" >
+                                            <span class="message-data-time" style="padding: 0px;">Ankit:</span>
+                                        </div>   
+                                    </div>            
+                                    <li class="clearfix">
+                                        <div class="row">
+                                          <div class="col-md-6">
+                                          <div class="message my-message">My Ads Are Not Visible
+                                            
+                                          </div> 
+                                      </div>
+                                     
+                                      </div>                                
+                                      </li>  
+
+                                      <div class="col-md-6">
+                                        <div class="message-data" >
+                                            <span class="message-data-time" style="padding: 0px;">Admin:</span>
+                                        </div>   
+                                    </div>
+                                    <li class="clearfix">
+                                      <div class="row">
+                                        <div class="col-md-6">
+                                        <div class="message my-message">Ok Sir, We are checking the issue and reverting back.
+                                          
+                                        </div> 
+                                    </div>
+                                   
+                                    </div>                                
+                                    </li>  
+
+                                    <div class="col-md-12">
+                                        <div class="message-data text-center" >
+                                            <span class="message-data-time" style="padding: 0px;">Admin Changed The Status To In Progress</span>
+                                        </div>   
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="message-data" >
+                                            <span class="message-data-time" style="padding: 0px;">Admin:</span>
+                                        </div>   
+                                    </div>
+                                    <li class="clearfix">
+                                      <div class="row">
+                                        <div class="col-md-6">
+                                        <div class="message my-message">The issue is resolved.
+                                          
+                                        </div> 
+                                    </div>
+                                   
+                                    </div>                                
+                                    </li>  
+
+                                    <div class="col-md-12">
+                                        <div class="message-data text-center" >
+                                            <span class="message-data-time" style="padding: 0px;">Admin Changed The Status To In Closed</span>
+                                        </div>   
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class ="col-md-6 col-sm-12">
+                            <br/> <br/> <br/>
+                            <div class="row">
+                                <h2> Concern Summary: </h2>
+                               <p> Description: Not Able to view ads on home screen.</p>
+
+                               <p> Raised On : 29/09/2022 10:20 AM</p>
+                                <p>Status: Open</p>
+                                <p> Priority: High</p>
+                            </div>
+                            <div class="row">
+                                <div class="chat-message clearfix">
+                                    <h4> New Message: </h4>
+                                    <div class="input-group mb-0">
+                                     
+                                        <input type="text" class="form-control" placeholder="Enter text here...">   
+                                        <div  class="input-group-prepend">
+                                            <div class="col-lg-6 hidden-sm text-right">
+                                                <a href="javascript:void(0);" class="btn btn-outline-primary"><i class="fa fa-image"></i></a>
+                                            </div>
+                                            <div class="col-lg-6 hidden-sm text-right">
+                                                <a href="javascript:void(0);" class="btn btn-outline-primary"><i class="fa fa-send"></i></a>
+                                            </div>
+    
+                                        </div>                                 
+                                    </div>
+                                </div>
+                            </div>
+                           
+                         
+                        </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+
+      
+    </ng-container>
+    <div *nzModalFooter>
+       
+
+      </div>
+  </nz-modal>
+
+
+  <nz-modal  [(nzVisible)]="concernFormVisible" nzTitle="Raise A Concern"  (nzOnCancel)="handleConcernCancel()" >
+    <ng-container *nzModalContent>
+        <form>
+            <div>
+                <label>Description:</label><br/>
+                <textarea class="form-control" rows="3" placeholder="Enter Description"></textarea>
+            </div>
+            <br/>
+            <div>
+                <label>Attachments:</label> <br/> 
+                <input type="file" class="form-control-file" id="exampleFormControlFile1">
+            </div>
+        </form>
+        </ng-container>
+        </nz-modal>

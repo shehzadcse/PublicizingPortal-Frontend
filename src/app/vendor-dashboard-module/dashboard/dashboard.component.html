@@ -1,0 +1,130 @@
+
+<h2>Dashboard</h2>
+
+
+
+<div class="main-content">
+<div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+      <div class="container-fluid">
+        <div class="header-body">
+          <div class="row">
+            <div class="col-xl-4 col-lg-4">
+              <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0">Total Enquiry</h5>
+                      <span class="h2 font-weight-bold mb-0">{{totalClicks || 0}}</span>
+             
+             
+                    </div>
+                   
+                  </div>
+     
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-4">
+              <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h6 class="card-title text-uppercase text-muted mb-0">AD Status: {{(adsData?.status || 'INACTIVE') | uppercase}}</h6>
+                      <p *ngIf="!user?.email_verified" style="margin:0px">Email Not Verified <a  style="color:blue" (click)="showModal()">Verify Now</a></p>
+                      <p *ngIf="!user?.phone_verified" style="margin:0px">Phone Not Verified <a  style="color:blue" (click)="showModal2()">Verify Now</a></p>
+                    </div>
+                    <div>
+                      <br  *ngIf="user?.phone_verified"/>
+                      <br  *ngIf="user?.email_verified "/>
+                      
+                    </div>
+                  </div>
+           
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-4">
+              <div class="card card-stats mb-4 mb-xl-0">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0">Total Spent</h5>
+                      <span class="h2 font-weight-bold mb-0">Rs. {{adsData?.wblocks ? (((adsData?.wblocks * adsData?.hblocks) * 500) + 80): 0}}</span>
+                    </div>
+                   
+                  </div>
+           
+                </div>
+              </div>
+            </div>
+         
+        
+          </div>
+        </div>
+    </div>
+      </div>
+ </div>
+      <br/>
+      <br/>
+      <br/>
+<br/>
+<div class="row">
+    <div class="col-md-6 col-sm-12">
+      <canvas baseChart
+      [data]="barChartDataDaily"
+      [options]="barChartOptions"
+      [plugins]="barChartPlugins"
+      [type]="barChartType"
+     >
+    </canvas>
+</div>
+
+<div class="col-md-6 col-sm-12">
+
+<canvas baseChart
+[data]="barChartData"
+[options]="barChartOptions"
+[plugins]="barChartPlugins"
+[type]="barChartType"
+>
+</canvas>
+    </div>
+    <br/>
+
+    
+
+</div>
+
+<form  #form="ngForm"   >
+<nz-modal  (nzOnCancel)="handleCancel()" [(nzVisible)]="isVisible" nzTitle="Verify Email OTP">
+  <ng-container *nzModalContent>
+    <h4 style="text-align: center;">Please Enter The OTP Sent To You On Your Email: {{user?.email}}</h4>
+    <input type="number" nz-input ngModel name="otp" placeholder="OTP" #emailOtp nzSize="large" />
+  </ng-container>
+  <div *nzModalFooter>
+    
+    <button nz-button nzType="default" (click)="handleCancel()">Cancel</button>
+    <button nz-button nzType="primary" (click)="handleOk(form)" >Verify</button>
+  </div>
+</nz-modal>
+</form>
+
+<form  #form2="ngForm"   >
+  <nz-modal  (nzOnCancel)="handleCancel()" [(nzVisible)]="isVisible2" nzTitle="Verify Phone OTP">
+    <ng-container *nzModalContent>
+      <h4  style="text-align: center;">Please Enter The OTP Sent To You On Your Phone Number: {{user?.phone}}</h4>
+      <input type="number" ngModel name="otp"  nz-input placeholder="OTP" #emailOtp nzSize="large" />
+    </ng-container>
+    <div *nzModalFooter>
+      
+      <button nz-button nzType="default" (click)="handleCancel()">Cancel</button>
+      <button nz-button nzType="primary" (click)="handleOkPhone(form2)" >Verify</button>
+    </div>
+  </nz-modal>
+  </form>
+  
+<br/>
+<br/>
+<br/>
+<br/>
+

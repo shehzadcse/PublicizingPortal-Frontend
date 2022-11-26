@@ -1,0 +1,61 @@
+<div style="margin-bottom :120px; padding-left: 20px;" class="row" id="__next">
+    <div class="Home_container__bCOhY">
+   
+      <div class="headline-wrapper container">
+        <h2>Select Blocks for your advertisement</h2>
+      </div>
+      <div>
+        <div style="padding: 30px;" class="row">
+          <div class="col-md-4">
+        <label> No Of Blocks</label>
+        <select (ngModelChange)="onChangeBlocks($event)" name="noOfBlocks" [ngModel]="count" class="form-select" aria-label="Default select example">
+          <!-- <option selected></option> -->
+          <option selected value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <label> Layout</label>
+        <select (ngModelChange)="changeLayout($event)" name="layout" [ngModel]="type" class="form-select" aria-label="Default select example">
+          <!-- <option selected></option> -->
+          <option selected value="1">Horizontal</option>
+          <option value="2">Vertical</option>
+          <option value="3">Mixed</option>
+         
+        </select>
+      </div>
+      </div>
+      </div>
+      <div style="padding-left: 20px;" class="row">
+      <div style="padding-bottom: 20px;"   [class]=" count === 10 ? '':  'col-md-6'" *ngFor="let i of mat ; let in =index"  >
+
+        <div class="row" *ngFor="let i of mat[in];let jn =index">
+              
+          <div  *ngFor="let j of mat[in][jn];" [class]="'box-95' + (mat[in][jn] === 1 ? ' active': '') "> </div>
+        
+          
+        </div>
+        <div >
+
+          <div  > <br/><button class="btn btn-primary" (click)="selectBlock(i, in)" type="button">Select</button></div>
+        </div>
+        <!-- <div style="overflow: hidden" class="grid-list-wrapper d-block">
+          <table cellPadding="0" cellSpacing="0" class="w-100">
+            <tbody style="overflow: hidden">
+            
+            </tbody>
+          </table>
+        </div> -->
+      </div>
+    </div>
+   
+    </div>
+  </div>

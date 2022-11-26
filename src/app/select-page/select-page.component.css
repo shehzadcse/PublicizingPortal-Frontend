@@ -1,0 +1,17 @@
+body {
+  overflow-y: hidden;
+}
+
+.box-95 {
+  height: 65px;
+  width: 65px;
+  background-color: #e9e4e0;
+  /* box-shadow: 3px 0 5px rgb(0 0 0 / 24%); */
+  border: 1px solid #d7ccc6;
+  cursor: pointer;
+  margin: 2px 2px;
+}
+
+button {
+  border-radius: 30px !important;
+}

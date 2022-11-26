@@ -1,0 +1,35 @@
+@import "~ng-zorro-antd/ng-zorro-antd.min.css";
+
+.navbar .ant-select-selector {
+  background-color: #f3f2f0 !important;
+  color: #000 !important;
+  border: none !important;
+}
+
+.navbar .ant-select-arrow {
+  color: #000 !important;
+  padding-bottom: 10px !important;
+}
+
+@media print {
+  .navbar {
+    display: none !important;
+  }
+  .sidebar-custom {
+    display: none !important;
+  }
+  .example-print {
+    display: block;
+  }
+}
+
+nz-select {
+  width: 100%;
+}
+/* #cdk-overlay-2 {
+  display: none !important;
+} */
+
+.input-details nz-select-top-control {
+  border: 2px solid #c3c3c3 !important;
+}

@@ -1,0 +1,150 @@
+<!-- <div class="header-wrapper container-fluid">
+    <div class="container"><div class="logo-wrapper" (click)="goToHome()" >COMPANY</div>
+    <div class="search-wrapper"><select class="location-dropdown">
+        <option>Delhi</option><option>Mumbai</option><option>Pune</option></select>
+        <input type="text" placeholder="Search for area, street name..."/></div>
+        <div class="icons-wrapper">
+
+          
+            <div class="cart-icon me-4"  (click)="goToCart()">
+                <span style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%">
+                    <span style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%">
+                        <img style="display:block;max-width:100%;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0" alt="" aria-hidden="true" src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2730%27%20height=%2730%27/%3e"/>
+                    </span>
+                
+                    <span class="notify-badge">{{count || 0}}</span>
+                    <img src="/assets/media/cart.56c8221d.svg" decoding="async" data-nimg="intrinsic" style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"/>
+
+                </span>
+               
+              
+        </div>
+            <div *ngIf="!loggedId" (click)="toggleShow()"  class="profile-icon">
+                <span style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%">
+                    <span style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%"><img style="display:block;max-width:100%;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0" alt="" aria-hidden="true" src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2730%27%20height=%2730%27/%3e"/></span>
+                    <img #toggleButton src="./assets/media/login.1c8ce0ae.svg" decoding="async" data-nimg="intrinsic" style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"/><noscript>
+                        <img srcSet="/assets/media/login.1c8ce0ae.svg 1x, /assets/media/login.1c8ce0ae.svg 2x" src="/assets/media/login.1c8ce0ae.svg" decoding="async" data-nimg="intrinsic" style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%" loading="lazy"/></noscript>
+                    </span>
+                </div>
+                <div *ngIf="loggedId"  (click)="toggleShow()"  class="profile-icon">
+                    <span style="box-sizing:border-box;display:inline-block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:relative;max-width:100%">
+                        <span style="box-sizing:border-box;display:block;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;max-width:100%"><img style="display:block;max-width:100%;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0" alt="" aria-hidden="true" src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2730%27%20height=%2730%27/%3e"/></span>
+                        <img #toggleButton src="./assets/media/user.8b1c1ab6.svg" decoding="async" data-nimg="intrinsic" style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%"/><noscript>
+                            <img srcSet="/assets/media/login.1c8ce0ae.svg 1x, /assets/media/login.1c8ce0ae.svg 2x" src="/assets/media/login.1c8ce0ae.svg" decoding="async" data-nimg="intrinsic" style="position:absolute;top:0;left:0;bottom:0;right:0;box-sizing:border-box;padding:0;border:none;margin:auto;display:block;width:0;height:0;min-width:100%;max-width:100%;min-height:100%;max-height:100%" loading="lazy"/></noscript>
+                        </span>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="loggedId &&onShow  "#menu class="profile-content-wrapper"><div class="user d-flex flex-column align-items-start"><div class="text-username">John Kido</div><div class="text-email">test@gmail.com</div></div><div class="content"><div class="content-wrapper cursor-pointer" (click)="goToAds()"><div><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 36.857 29.897"><g id="up" transform="translate(0 0)"><path id="Path_18" data-name="Path 18" d="M15.749,14.5l1.817-3.956L21.5,8.749,17.566,6.956,15.749,3,14,6.956,10,8.749l4,1.794Z" transform="translate(8.443 -3)" fill="#000000"></path><path id="Path_19" data-name="Path 19" d="M6.6,15.2l.92-3.68,3.68-.92-3.68-.92L6.6,6,5.68,9.68,2,10.6l3.68.92Z" transform="translate(-2 0.899)" fill="#000000"></path><path id="Path_20" data-name="Path 20" d="M35.4,6a3.437,3.437,0,0,0-3.11,4.922l-6.934,6.922a3.4,3.4,0,0,0-2.972,0L20.06,15.521a3.167,3.167,0,0,0,.369-1.472,3.456,3.456,0,1,0-6.565,1.472L6.93,22.443a3.491,3.491,0,1,0,1.636,1.633L15.5,17.154a3.4,3.4,0,0,0,2.972,0L20.8,19.477a3.167,3.167,0,0,0-.369,1.472,3.456,3.456,0,1,0,6.565-1.472l6.934-6.922A3.445,3.445,0,1,0,35.4,6Z" transform="translate(-2 0.899)" fill="#000000"></path></g></svg></div><div class="account-text">Post new ads</div></div><div class="content-wrapper" (click)="onSignOut()"><div><svg width="16" height="16" viewBox="0 0 32 32" id="i-signout" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M28 16 L8 16 M20 8 L28 16 20 24 M11 28 L3 28 3 4 11 4"></path></svg></div><div class="account-text">Sign out</div></div></div></div>
+
+
+
+
+
+    <div *ngIf="!loggedId && onShow" #menu class="nav-sign-in-box"><div class="login-wrapper"><form  #form="ngForm" (ngSubmit)="login(form)">
+        <div class="s_input-wrapper ">
+            <label *ngIf="showInvalidCred" style="color: red;">Invalid Credentials</label><br/>
+        <label class="text-label">Email<span class="required-field"> *</span></label>
+        <input type="email" class="text-input" autocomplete="on" name="emailId" ngModel></div><div class="s_input-wrapper my-3"><div class="d-flex justify-content-between">
+            <label class="text-label">Password<span class="required-field"> *</span></label>
+            <label class="text-label-forgot">Forgot?</label>
+        </div><input name="password" ngModel type="password" autocomplete="new-password" class="text-input" value="1234">
+        </div><div class="s_input-wrapper my-3 d-flex align-items-center">
+            <input type="checkbox">
+            <label class="text-label ms-2">Show password</label>
+        </div>
+        <div class="d-flex justify-content-start mb-3">
+            <button class="login_btn" type="submit"><span>SIGN IN</span></button>
+        </div>
+
+        <label (click)="gotoRegister()" class="text-label-forgot">Register</label>
+    
+    
+    </form>
+    </div>
+</div> -->
+
+
+
+<div class="navbar">
+    <nav class="menu">
+        <ul>
+            <!-- <li class="logo">LOGO</li> -->
+         <a (click)="goToHome()"  routerLink="/">   <li style="cursor: pointer;"  class="logo"> <img src="assets/media/logo.png" alt="logo" /></li></a>
+            <li class="search-icon">
+                <nz-select nzShowSearch (ngModelChange)="onLocationChange($event)"  nzPlaceHolder="Select a City" [ngModel]="selectedCity">
+                    <nz-option *ngFor="let city of cities" [nzLabel]="city" [nzValue]="city"></nz-option>
+                 
+                
+                  </nz-select>
+                <input  type="search" (ngModelChange)="onValChange($event)" (keyup.enter)="onSearchChange($event)" [(ngModel)]="search" name="search" id="" placeholder="What are you looking for?">
+                <label class="icon">
+                    <!-- <i class="fa fa-search" style="font-size:25px; color: #e8e3df;"></i> -->
+                    <i (click)="clearSearch()" *ngIf="search.length > 0" nz-icon nzType="close" nzTheme="outline"></i>
+                    <i *ngIf="search.length === 0" class="fa fa-search" ></i>
+                </label>
+            </li>
+            <div class="items">
+               <a (click)="goToCart()" *ngIf="!adsData" routerLink="create-ads" > <li  style="cursor: pointer;" ><a  >BUY</a></li></a>
+               <a  (click)="goToLogin()" routerLink="login" >  <li   style="cursor: pointer;" *ngIf="!loggedId" ><a  style="cursor: pointer;">LOGIN</a></li></a>
+               
+                <li nz-dropdown style="cursor: pointer;" *ngIf="loggedId" z-dropdown nzTrigger="click" [nzDropdownMenu]="menu"  ><a  style="cursor: pointer;">Profile</a></li>
+            </div>
+       
+        </ul>
+    </nav>
+  
+</div>
+<ngx-marquee *ngIf="user && user.status && user.status !== 'active'">
+    <mark style="color: red;" class="ticker-custom">Your account is not yet activated. please verify your phone number and email from the dashboard to activate your account  </mark>
+  </ngx-marquee>
+<!-- <nz-dropdown-menu #menu="nzDropdownMenu">
+    <ul nz-menu>
+      <li nz-menu-item>1st menu item</li>
+      <li nz-menu-item>2nd menu item</li>
+      <li nz-menu-item nzDisabled>disabled menu item</li>
+      <li nz-submenu nzTitle="sub menu">
+        <ul>
+          <li nz-menu-item>3rd menu item</li>
+          <li nz-menu-item>4th menu item</li>
+        </ul>
+      </li>
+      <li nz-submenu nzDisabled nzTitle="disabled sub menu">
+        <ul>
+          <li nz-menu-item>3rd menu item</li>
+          <li nz-menu-item>4th menu item</li>
+        </ul>
+      </li>
+    </ul>
+  </nz-dropdown-menu> -->
+  <div id="click"></div>
+  
+  <nz-dropdown-menu   #menu="nzDropdownMenu">
+      <div class="profile-content-wrapper">
+          <div class="user d-flex flex-column align-items-start">
+              <div class="text-username">{{user.name}}</div>
+              <div class="text-email">{{user.email}}</div>
+          </div>
+          <div class="content">
+             <a  *ngIf="!adsData" routerLink="create-ads"> <div  class="content-wrapper cursor-pointer" (click)="goToAds()">
+                  <div><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 36.857 29.897"><g id="up" transform="translate(0 0)"><path id="Path_18" data-name="Path 18" d="M15.749,14.5l1.817-3.956L21.5,8.749,17.566,6.956,15.749,3,14,6.956,10,8.749l4,1.794Z" transform="translate(8.443 -3)" fill="#000000"></path><path id="Path_19" data-name="Path 19" d="M6.6,15.2l.92-3.68,3.68-.92-3.68-.92L6.6,6,5.68,9.68,2,10.6l3.68.92Z" transform="translate(-2 0.899)" fill="#000000"></path><path id="Path_20" data-name="Path 20" d="M35.4,6a3.437,3.437,0,0,0-3.11,4.922l-6.934,6.922a3.4,3.4,0,0,0-2.972,0L20.06,15.521a3.167,3.167,0,0,0,.369-1.472,3.456,3.456,0,1,0-6.565,1.472L6.93,22.443a3.491,3.491,0,1,0,1.636,1.633L15.5,17.154a3.4,3.4,0,0,0,2.972,0L20.8,19.477a3.167,3.167,0,0,0-.369,1.472,3.456,3.456,0,1,0,6.565-1.472l6.934-6.922A3.445,3.445,0,1,0,35.4,6Z" transform="translate(-2 0.899)" fill="#000000"></path></g></svg>
+                  </div>
+                  <div class="account-text">Post new ads</div>
+              </div></a>
+             <a routerLink="vendor-profile"> <div  class="content-wrapper cursor-pointer" (click)="gotoVendor()">
+                  <div><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 36.857 29.897"><g id="up" transform="translate(0 0)"><path id="Path_18" data-name="Path 18" d="M15.749,14.5l1.817-3.956L21.5,8.749,17.566,6.956,15.749,3,14,6.956,10,8.749l4,1.794Z" transform="translate(8.443 -3)" fill="#000000"></path><path id="Path_19" data-name="Path 19" d="M6.6,15.2l.92-3.68,3.68-.92-3.68-.92L6.6,6,5.68,9.68,2,10.6l3.68.92Z" transform="translate(-2 0.899)" fill="#000000"></path><path id="Path_20" data-name="Path 20" d="M35.4,6a3.437,3.437,0,0,0-3.11,4.922l-6.934,6.922a3.4,3.4,0,0,0-2.972,0L20.06,15.521a3.167,3.167,0,0,0,.369-1.472,3.456,3.456,0,1,0-6.565,1.472L6.93,22.443a3.491,3.491,0,1,0,1.636,1.633L15.5,17.154a3.4,3.4,0,0,0,2.972,0L20.8,19.477a3.167,3.167,0,0,0-.369,1.472,3.456,3.456,0,1,0,6.565-1.472l6.934-6.922A3.445,3.445,0,1,0,35.4,6Z" transform="translate(-2 0.899)" fill="#000000"></path></g></svg>
+                  </div>
+                  <div class="account-text">Vendor Dashboard</div>
+              </div></a>
+              <div class="content-wrapper" (click)="onSignOut()">
+                  <div><svg width="16" height="16" viewBox="0 0 32 32" id="i-signout" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M28 16 L8 16 M20 8 L28 16 20 24 M11 28 L3 28 3 4 11 4"></path></svg></div><div class="account-text">Sign out</div></div></div>
+              
+      </div>
+    </nz-dropdown-menu>
+
+
+
+
+
+ 

@@ -1,0 +1,50 @@
+
+ <h2>Update Password</h2>
+
+ <div class="">
+    <form #form2="ngForm" (ngSubmit)="updatePass(form2)" >
+        <div class="row justify-content-center">
+           
+    
+            <div class="col-8 cart-summary">
+               
+                  
+                  
+                 
+                <div >
+                 <br/>
+                    <div class="row">
+                     
+                  
+                        <div class="input-details col-lg-6 col-sm-12">
+                            <label>Old Password</label>
+                            <input required type="password" required name="oldPassword" ngModel/>
+                        </div>
+                        <div class="input-details col-lg-6 col-sm-12">
+                            <label>New Password</label>
+                            <input required #pass ngModel (ngModelChange)="checkPass($event,pass2.value)"  type="password" required name="password" ngModel />
+                        </div>
+                        <div class="input-details col-lg-6 col-sm-12">
+                           <label>Confirm New Password</label>
+                           <input  required #pass2 (ngModelChange)="checkPass($event,pass.value)" type="password" required name="confPassword" ngModel />
+                       </div>
+                       <span style="color: red;" *ngIf="!passMatch">*Passwords Do Not Match <br/></span>
+                 
+                        
+                    </div>
+                </div>
+
+            </div>
+         
+
+       
+        </div>
+        <div  class="row justify-content-center">
+
+            <button [disabled]="!form2.valid || !passMatch" style="width: 200px;" class="btn btn-primary">Update Password</button>
+        </div>
+    </form>
+</div>
+
+<br/>
+ <br/>
